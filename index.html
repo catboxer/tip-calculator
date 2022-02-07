@@ -5,40 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+<link rel="stylesheet" type="text/css" href="./styles.css">
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <div class="title"><h1>SPLITTER</h1></div>
+    
+    <div class="container">
+      <div id="calculator" oninput="calculate()"> 
+        <form method="post" action="/">
+        <div class="calculator__bill">
+          <label for="billTotal">Bill</label>
+            <input type="number" name="bill" id="billTotal" placeholder="0.00" oninput="calculate()" />
+        </div>
+        <div class="calculator__tip">
+          <h2>Select Tip %</h2>
+          <div class="calculator__tip-amount">
+            <label for="ten"> 
+              <input type="button" id="ten" value="10%"/>
+            </label>
+            <label for="fifteen">
+              <input type="button"  id="fifteen" value="15%"/>
+            </label>
+            <label for="twenty">
+              <input type="button" id="twenty" value="20%"/>
+            </label>
+            
+            <label for="twentyfive">
+              <input type="button" id="twentyfive" value="25%"/>
+            </label>
+            
+            <label for="thirtyfive">
+              <input type="button" id="thirtyfive" value="35%"/>
+            </label>
+            <label for="customPercent">
+              <input type="number" name="custom" id="customPercent" value="0"/>
+            </label>
+          </div>
+        </div>
+        <div class="calculator__people">
+          <label for="numberPeople">Number Of People</label>
+            <input type="number" class="icon-person" name="people" id="numberPeople" value="0"/>
+        </div>
+      </div>
+      <div class="result">
+        <div class="result__block">
+          <div class="result__amount">
+            <h2>Tip Amount</h2>
+            <p>/ person</p>
+          </div>
+          <div class="result__amount-tip">
+            $0.00
+          </div>
+        </div>
+        <div class="result__block">
+          <div class="result__total">
+            <h2>Total</h2>
+            <p>/ person</p>
+          </div>
+            <div class="result__total-amount">
+              $0.00
+            </div>
+        </div>
+        <input type="reset" value="RESET" id='rest'>
+      </form>
+      </div>
+    </div>
+  </main>
+  <script src="./app.js"></script>
 </body>
 </html>
